@@ -2,8 +2,8 @@
 
 알고리즘 공부
 1. KH
-  ▼ JavaScript
-      - 체크박스 전체선택
+    ▼ JavaScript
+        - 체크박스 전체선택
   ▼ 1
   ▼ 2
   ▼ 3  
