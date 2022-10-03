@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입CSS</title>
+</head>
+<body>
+    <form action="">
+        <fieldset>
+            <legend>회원가입</legend>
+            아이디 : <input type="text" id="userId" onkeyup="checkId();">
+            <label></label>    <br><br>
+            비밀번호 : <input type="password" id="userPwd1">    <br><br>
+            비밀번호 확인 : <input type="password" id="userPwd2">
+            <label></label>   <br><br>
+            이름 : <input type="text" id="userName">    <br><br>
+            <button type="button" onclick="return validate();">회원가입</button>
+        </fieldset>
+    </form>
+
+    <script>
+        let userPwd2 = document.querySelector("#userPwd2");
+        userPwd2.addEventListener("blur", function(){
+
+            let userPwd1 = document.querySelector("#userPwd1").value;
+            let userPwd2 = document.querySelector("#userPwd2").value;
+
+            let userPwdLabel = document.querySelector("#userPwd2+label");
+            if(userPwd1 == userPwd2){
+                userPwdLabel.innerHTML = "비밀번호가 일치합니다.";
+                userPwdLabel.style.color = "green";
+            } else {
+                userPwdLabel.innerHTML = "비밀번호가 일치하지 않습니다.";
+                userPwdLabel.style.color = "red";
+            }
+        });
+
+        function checkId() {
+            let userId = document.querySelector("#userId");
+            let userIdLabel = document.querySelector("#userId+label")
+
+            if(userId.value == "user01"){
+                // 이미 존재하는 아이디 입니다.
+                userIdLabel.innerHTML = "이미존재하는 아이디입니다.";
+                userIdLabel.style.color = "red";
+            } else {
+                // 사용 가능한 아이디 입니다.
+                userIdLabel.innerHTML = "사용 가능한 아이디입니다.";
+                userIdLabel.style.color = "green";
+            }
+        }
+
+        function validate() {
+            let userId = document.querySelector("#userId");
+            let userPwd1 = document.querySelector("#userPwd1");
+            let userPwd2 = document.querySelector("#userPwd2");
+            let userName = document.querySelector("#userName");
+
+            if(!userId.value){
+                alert("아이디값을 입력해주세여");
+                userId.select();
+                return false;
+            }
+
+            if(!userPwd1.value){
+                alert("비밀번호를 입력해주세여");
+                userPwd1.select();
+                return false;
+            }
+
+            if(!userPwd2.value){
+                alert("비밀번호 확인에 값을 입력해주세여");
+                userPwd2.select();
+                return false;
+            }
+
+            if(!userName.value){
+                alert("이름을 제대로 입력하라잉");
+                userName.select();
+                return false;
+            }
+
+            if(userId.value == "user01"){
+                alert("해당 아이디로 회원가입 할 수 없습니다.");
+                userId.value = "";
+                userId.select();
+                return false;
+            }
+            
+            if(userPwd1.value != userPwd2.value){
+                alert("비밀번호가 일치하지 않습니다.");
+                userPwd2.value = "";
+                userPwd2.select();
+                return false;
+            }
+
+            alert(userName.value + "님 회원가입을 축하합니다. ^^");
+
+            userId.value = "";
+            userPwd1.value = "";
+            userPwd2.value = "";
+            userName.value = "";
+
+            return true;
+        }
+    </script>
+</body>
+</html>
