@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택에 따라 display 변경</title>
+</head>
+<body>
+    <fieldset>
+        <legend>검색할 항목을 선택하세요</legend>
+
+        <input type="radio" name="board" id="title">
+        <label for="title">제목</label>
+        <input type="radio" name="board" id="date">
+        <label for="date">날씨</label>
+        <input type="radio" name="board" id="regId">
+        <label for="regId">제목</label>
+
+    </fieldset>
+
+    <div id="title_div" style="background-color: lightgrey; margin : auto; padding: 5px; display: none;">
+        검색할 제목을 입력하세요 : <br>
+        <input type="text" style="width : 400px;"> <button>검색</button>
+    </div>
+
+    <div id="date_div" style="background-color: lightgrey; margin : auto; padding: 5px; display: none;">
+        검색할 날짜를 선택하세요 : <br>
+        <input type="date">  - <input type="date"> <button>검색</button>
+    </div>
+
+    <div id="regId_div" style="background-color: lightgrey; margin : auto; padding: 5px; display: none;">
+        검색할 작성자 아이디를 선택하세요 : <br>
+        <input type="text"> <button>검색</button>
+    </div>
+
+    <script>
+        let radios = document.querySelectorAll("[name=board]");
+        let divs = document.querySelectorAll("[id$='_div']");
+
+        for(let i = 0; i < radios.length; i++){
+            radios[i].addEventListener("change", function(){
+                for(let j = 0; j < divs.length; j++){
+                    divs[j].style.display = "none";
+                }
+
+                document.querySelector("#" + this.id + "_div" ).style.display = "block";
+
+            });
+        }
+    </script>
+</body>
+</html>
