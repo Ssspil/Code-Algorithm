@@ -15,7 +15,7 @@
         <input type="radio" name="board" id="date">
         <label for="date">날씨</label>
         <input type="radio" name="board" id="regId">
-        <label for="regId">제목</label>
+        <label for="regId"></label>
 
     </fieldset>
 
