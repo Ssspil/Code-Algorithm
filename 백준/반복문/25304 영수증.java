@@ -16,43 +16,43 @@ public class Main {
 		hap();
 	}
 	
-			static void hap() {
+	static void hap() {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		
 		try {
-	        int myMoney = Integer.parseInt(br.readLine());
-            int n = Integer.parseInt(br.readLine());
-            int sum = 0;
-            
-            for(int i = 0; i < n; i++){
-            	StringTokenizer stn = new StringTokenizer(br.readLine());
-            	
-            	int a = Integer.parseInt(stn.nextToken());
-            	int b = Integer.parseInt(stn.nextToken());
-            
-            	sum += (a*b);
-            }
-            
-            if(myMoney == sum) {
-            	bw.write("Yes");
-            } else {
-            	bw.write("No");
-            }
-			
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				bw.flush();
-				bw.close();
+		    int myMoney = Integer.parseInt(br.readLine());
+		    int n = Integer.parseInt(br.readLine());
+		    int sum = 0;
+
+		    for(int i = 0; i < n; i++){
+			StringTokenizer stn = new StringTokenizer(br.readLine());
+
+			int a = Integer.parseInt(stn.nextToken());
+			int b = Integer.parseInt(stn.nextToken());
+
+			sum += (a*b);
+		    }
+
+		    if(myMoney == sum) {
+			bw.write("Yes");
+		    } else {
+			bw.write("No");
+		    }
+
+			} catch (NumberFormatException e) {
+				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
-			}
+			} finally {
+				try {
+					bw.flush();
+					bw.close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
 
+			}
 		}
-	}
 
 }
