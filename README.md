@@ -75,6 +75,7 @@
                 <ul>
                     <li>Day 2 분수의 덧셈</li>
                     <li>Day 3 최빈값 구하기</li>
+                    <li>Day 8 외계행성의 나이</li>
                 </ul>
             </li>
         </ul>
