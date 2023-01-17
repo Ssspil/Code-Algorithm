@@ -78,6 +78,7 @@
                     <li>Day 3 최빈값 구하기</li>
                     <li>Day 8 외계행성의 나이</li>
                     <li>Day 8 진료순서 정하기</li>
+                    <li>Day 9 구슬을 나누는 경우의 수</li>
                 </ul>
             </li>
         </ul>
