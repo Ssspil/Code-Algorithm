@@ -1,13 +1,14 @@
 class Solution {
-    public int solution(int balls, int share) {
-        int answer = combination(balls, share);
-        return answer;
-    }
-    
-    public int combination(int n, int m){
-        if(m == 0 || n == m){
+    public long solution(int balls, int share) {
+        share = Math.min(balls - share, share);
+
+        if (share == 0)
             return 1;
-        }
-        return combination(n-1, m-1) + combination(n-1, m);
+
+        long result = solution(balls - 1, share - 1);
+        result *= balls;
+        result /= share;
+
+        return result;
     }
 }
