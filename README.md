@@ -90,6 +90,7 @@
                     <li>Day 21 안전지대</li>
                     <li>Day 22 유한소수 판별하기</li>
                     <li>Day 22 평행</li>
+                    <li>Day 23 특이한 정렬</li>
                 </ul>
             </li>
         </ul>
